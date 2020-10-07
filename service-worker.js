@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/chawitter_deploy/precache-manifest.c4f974c28419b61f6f7de99f5c04f94f.js"
+  "/chawitter_deploy/precache-manifest.b02ee67daff49be724844280faf60535.js"
 );
 
 self.addEventListener('message', (event) => {
