@@ -7,13 +7,16 @@ const Home = ({ userObj }) => {
   const [chaweets, setChaweets] = useState([]);
 
   useEffect(() => {
-    dbService.collection("chaweets").onSnapshot((snapshot) => {
-      const chaweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setChaweets(chaweetArray);
-    });
+    dbService
+      .collection("chaweets")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snapshot) => {
+        const chaweetArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setChaweets(chaweetArray);
+      });
   }, []);
 
   return (

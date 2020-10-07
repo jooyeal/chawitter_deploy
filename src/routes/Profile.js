@@ -24,15 +24,7 @@ export default ({ refreshUser, userObj }) => {
       refreshUser();
     }
   };
-  const getMyChaweet = async () => {
-    const chaweets = await dbService
-      .collection("chaweets")
-      .where("creatorId", "==", userObj.uid)
-      .get();
-  };
-  useEffect(() => {
-    getMyChaweet();
-  }, []);
+  
 
   return (
     <div className="container">
