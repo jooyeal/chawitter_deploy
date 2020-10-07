@@ -28,7 +28,6 @@ export default ({ refreshUser, userObj }) => {
     const chaweets = await dbService
       .collection("chaweets")
       .where("creatorId", "==", userObj.uid)
-      .orderBy("createdAt")
       .get();
   };
   useEffect(() => {
